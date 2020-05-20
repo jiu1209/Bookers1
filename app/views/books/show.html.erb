@@ -43,11 +43,13 @@
            </div>
           </div>
             <div class="col-xs-9">
+                 <div class=de>
+
+               <%= render 'layouts/search_messages', search: @search  %>
                <table class="table">
-              <thead>
-                <div class=de>
+
                 <h2>Book detail</h2> 
-              </div>
+                <thead>
               </thead>
   
                 <tbody>
@@ -74,3 +76,12 @@
        <div class="top2">
        <p>CopyRight Infratop.inc</p>
      </div>
+     <h2>user seach</h2>
+ <% @datas.each do |data| %>
+
+ <p><%= user.name %></p>
+
+ <p><%= book.title %></p>
+
+ <p><%= book.body %></p>
+ <% end %>

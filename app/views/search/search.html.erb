@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container"> 
+      <div class="row"> 
+      	<div class="col-xs-9">
+<%if @model == 'user' %>
+<h2>user search</h2>
+<table class="table">
+	 <% @datas.each do |user| %>
+        <thead>
+            <tr>
+                <th></th>
+                <th><%= user.name %></th>
+            </tr>
+        </thead>
+   <% end %>
+</table>
+<% end %>
+<% if @model == "book" %>
+<h2>book search</h2>
+    <table>
+    <% @datas.each do |book| %>
+        <thead>
+            <tr>
+                <th><%= book.title %></th>
+                <th><%= book.body %></th>
+            </tr>
+        </thead>
+    <% end %>
+    </table>
+<% end %>
+</div>
+</div>
+</div>

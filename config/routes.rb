@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :books
   resources :homes, :only =>[:new]
   get "/home/about" => "homes#about"
+  get "/search" => "search#search" 
 end
