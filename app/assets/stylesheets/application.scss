@@ -14,7 +14,8 @@
  *= require_self
  */
  @import "bootstrap-sprockets";  
- @import "bootstrap";          
+ @import "bootstrap"; 
+ @import "font-awesome";         
 .top {
 	padding-top: 30px;
 	margin-left: 18px;
@@ -82,4 +83,8 @@
 .toto {
 	margin-top: 80px;
 	display: flex;
+}
+
+ul {
+   list-style: none;
 }

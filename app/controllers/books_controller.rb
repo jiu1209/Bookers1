@@ -1,6 +1,13 @@
 class BooksController < ApplicationController
 before_action :authenticate_user!
 before_action :login_check, only: [:edit]
+
+def show	
+	@book =Book.find(params[:id])
+	@users = User.all
+	@user = @book.user
+	@book_comment = BookComment.new
+end
 	
 def edit
   if  @book = current_user.books.find_by(id: params[:id])
@@ -22,12 +29,6 @@ else
 end
 end
 
-def show	
-	@book =Book.find(params[:id])
-	@books = Book.page(params[:page])
-	@users = User.all
-	@user = @book.user
-end
 
 def destroy
 	 book = Book.find(params[:id])
@@ -43,6 +44,7 @@ def index
 end
 
 def create
+	@book_comment = BookComment.new
 	@book =Book.new(book_params)
     @book.user_id = current_user.id
 
